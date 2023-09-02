@@ -101,3 +101,40 @@ main p{
 .versus{
     font-size: 100px;
 }
+
+a{
+    text-decoration: none;
+}
+
+.formulario{
+    background-color: darkgrey;
+    display: flex;
+}
+
+.formulario ul {
+    list-style: none;
+}
+
+.formulario li {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.formulario ul li label{
+    min-width: 80px;
+    padding-right: 10px;
+}
+
+.formulario ul button{
+    position: relative;
+    top: 1em;
+    left: 9em;
+}
+
+.radio-personajes label{
+    min-width: none;
+    max-width: 10px;
+}
