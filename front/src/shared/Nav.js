@@ -1,13 +1,17 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Nav = (props) =>{
     return(
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="como-jugar.html">Como Jugar</a></li>
-            <li><a href="iniciar-juego.html">Iniciar Juego</a></li>
-            <li><a href="ultimos-pjs-agregados.html">Ultimos Personajes</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><Link to="/">Inicio</Link></li>
+                <li><Link to="/como-jugar">Como Jugar</Link></li>
+                <li><Link to="/iniciar-juego">Iniciar Juego</Link></li>
+                <li><Link to="/ultimos-pjs">Ultimos Personajes</Link></li>
+            </ul>
+        </nav>
+        
     );
 }
 
