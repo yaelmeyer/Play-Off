@@ -1,11 +1,11 @@
 import React from 'react';
+import  '../styles/components/cajaTexto.css';
 
 const CajaTexto = (props) =>{
+    const parrafos = props.parrafos;
     return(
-        <div>
-            <p>Play-Off es un juego para jugar con amigos, que consiste en elijir personajes famosos y votar a tus favoritos.</p>          
-
-            <p>Puedes elejir a cualquiera que quieras, solo tienes que cargar la imagen en la app</p>
+        <div className="explicacion">
+            {parrafos.map(parrafo => <p key={parrafo}>{parrafo}</p>)}
         </div>
     );
 }

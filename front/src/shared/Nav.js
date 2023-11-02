@@ -1,14 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import '../styles/shared/nav.css';
+import {NavLink} from 'react-router-dom';
 
 const Nav = (props) =>{
     return(
         <nav>
             <ul>
-                <li><Link to="/">Inicio</Link></li>
-                <li><Link to="/como-jugar">Como Jugar</Link></li>
-                <li><Link to="/iniciar-juego">Iniciar Juego</Link></li>
-                <li><Link to="/ultimos-pjs">Ultimos Personajes</Link></li>
+                <li><NavLink to="/" className={({isActive}) => isActive? 'activo' : undefined}>Inicio</NavLink></li>
+                <li><NavLink to="/como-jugar" className={({isActive}) => isActive? 'activo' : undefined}>Como Jugar</NavLink></li>
+                <li><NavLink to="/iniciar-juego" className={({isActive}) => isActive? 'activo' : undefined}>Iniciar Juego</NavLink></li>
+                <li><NavLink to="/ultimos-pjs" className={({isActive}) => isActive? 'activo' : undefined}>Ultimos Personajes</NavLink></li>
             </ul>
         </nav>
         

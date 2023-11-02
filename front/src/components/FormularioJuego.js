@@ -1,8 +1,9 @@
 import React from 'react';
+import '../styles/components/formularioJuego.css';
 
 const FormularioJuego = (props) =>{
     return(
-        <form action="">
+        <form action="" className="formulario">
             <ul>
                  <li>
                     <label htmlFor="administrador">aqui va el nombre del administrador</label>
@@ -13,7 +14,7 @@ const FormularioJuego = (props) =>{
                 </li>
                 <li>
                     <label>Cantidad Personajes</label>
-                    <div>
+                    <div className="radio-personajes">
                         <input type="radio" id="2" name="cant-personajes" value="2"/>
                         <label htmlFor="2">2</label>
                         <input type="radio" id="4" name="cant-personajes" value="4"/>

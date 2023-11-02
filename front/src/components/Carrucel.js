@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/components/carrucel.css';
 import pj1 from '../img/carrucel/pj1.png';
 import pj2 from '../img/carrucel/pj2.png';
 import pj3 from '../img/carrucel/pj3.png';
@@ -9,7 +10,7 @@ import pj7 from '../img/carrucel/pj7.png';
 
 const Carrucel = (props) => {
     return(
-        <div>
+        <div className="imagenes">
             <img  src={pj1} alt="First slide"/>
             <img  src={pj2} alt="First slide"/>
             <img  src={pj3} alt="First slide"/>
