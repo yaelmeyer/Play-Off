@@ -1,0 +1,10 @@
+.explicacion{
+    background-color: darkgrey;
+    min-height: 150px;
+    width: 100%;
+    text-align: center;
+}
+
+.explicacion p:hover{
+    background-color: dimgray;
+}

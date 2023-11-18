@@ -1,0 +1,22 @@
+nav {
+    background-color: darkgrey;
+    height: 25px;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    width: 10%;
+    height: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 2px 0px;
+}
+
+.activo {
+    background-color: aliceblue;
+}

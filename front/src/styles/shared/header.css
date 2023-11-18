@@ -1,0 +1,27 @@
+header {
+    background-color:darkgray;
+    /* text-align: center; */
+}
+
+header h1 {
+    font-size: 30px;
+    color:darkslategray;
+    padding: 10px;
+}
+
+.contenedor {
+    height: 145px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    width: 140px;
+    height: 150px;
+    background-color:lavender;
+    border-radius: 58px;
+    display: flex;
+    align-items: center;
+}
