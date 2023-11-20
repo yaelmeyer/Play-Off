@@ -6,6 +6,7 @@ class Server{
         this.app = express()
         this.port = 8280
         this.partidasPath = "/api/partidas"
+        this.personajesPath = '/api/personajes'
 
         //conectar a la base de datos
 
@@ -32,7 +33,8 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.partidasPath, require('../routes/partidaRoute'))
+        this.app.use(this.partidasPath, require('../routes/partidaRoute')),
+        this.app.use(this.personajesPath, require('../routes/personajesRoute'))
     }
 }
 
