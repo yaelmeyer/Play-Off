@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {  useState } from "react";
+import {Navigate} from 'react-router-dom'
 import '../styles/components/formularioJuego.css';
 
+
 const FormularioJuego = (props) =>{
+    const url = props.url
+    const cantPjs = 1
+    const [redireccionar, setRedireccionar] = useState(false)
+
+    const empezarJuego = () =>{
+        console.log('empezarJuego')
+        setRedireccionar(true)
+    }
+
     return(
-        <form action="" className="formulario">
+        <form onSubmit={empezarJuego} className="formulario">
             <ul>
                  <li>
                     <label htmlFor="administrador">aqui va el nombre del administrador</label>
@@ -33,9 +44,12 @@ const FormularioJuego = (props) =>{
                     <input type="text" id="nombre"/>
                 </li>
                 <button type="submit">crear partida</button>
+                {redireccionar && <Navigate to={`/cargar-pjs`} params={{cantPjs: cantPjs}}/>}
             </ul>
-        </form>
+         </form>
     );
 }
+
+
 
 export default FormularioJuego;
