@@ -8,6 +8,7 @@ import UltimosPjsAgregados from "./pages/UltimosPjsAgregados";
 import Header from './shared/Header';
 import Nav from './shared/Nav';
 import Footer from './shared/Footer';
+import UnirseAPartida from './pages/UnirseAPartida';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<HomePage/>}/>
           <Route path='como-jugar' element={<ComoJugar/>}/>
           <Route path='iniciar-juego' element={<IniciarJuego/>}/>
+          <Route path='unirse-partida' element={<UnirseAPartida/>}/>
           <Route path='ultimos-pjs' element={<UltimosPjsAgregados/>}/>
         </Routes>
       </BrowserRouter>
