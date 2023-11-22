@@ -6,16 +6,16 @@ import { useEffect, useState } from "react"
 const ROOT = '/img/carrucel'
 
 const Duelo = (props) =>{
-    const pj1 = require(`../../${props.pj1}`) 
-    const pj2 = require(`../../${props.pj2}`)
+    const pj1 = require(`../../${props.pjs[0]}`) 
+    const pj2 = require(`../../${props.pjs[1]}`) 
+    const vs = require('../../img/vs.png')
+    const pjs = [pj1, vs, pj2]
 
     return(
         <div className="imagenes">
-            <img  src={ pj1 } />
-            <div>
-                <span>VS</span>
-            </div>
-            <img  src={pj2} alt="First slide"/>
+            {pjs.map((pj) =>(
+                <img src={pj}/>
+            ))}
         </div>
     )
 }
