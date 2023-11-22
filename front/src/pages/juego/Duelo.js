@@ -6,18 +6,30 @@ import { useEffect, useState } from "react"
 const ROOT = '/img/carrucel'
 
 const Duelo = (props) =>{
-    const pj1 = require(`../../${props.pjs[0]}`) 
-    const pj2 = require(`../../${props.pjs[1]}`) 
+    let pj1 = require(`../../${props.pjs[0]}`) 
+    let pj2 = require(`../../${props.pjs[1]}`) 
+    let ganador = require(`../../${props.pjs[props.ganador]}`) 
     const vs = require('../../img/vs.png')
-    const pjs = [pj1, vs, pj2]
+    const setSiguiente = props.setSiguiente
+
+
+    const votar =(index) =>{
+        setSiguiente(index)
+    }
 
     return(
         <div className="imagenes">
-            {pjs.map((pj) =>(
-                <img src={pj}/>
-            ))}
+            <img src={pj1} key={pj1} onClick={() =>votar(0)}/>
+            <img src={vs} key={vs}/>
+            <img src={pj2} key={pj2} onClick={() =>votar(1)}/>
+            <br/>
+            <img src={ganador} key={ganador}/>
         </div>
     )
 }
 
 export default Duelo
+
+// {pjs.map((pj, index) =>(
+//     <img src={pj} key={pj} onClick={() =>votar(index)}/>
+// ))}
