@@ -52,8 +52,10 @@ const Duelo = (props) =>{
         setPjsGanadores([])
        } 
 
-       if(pjsGanadores.length == 1 && fase == 1){
-        setGanador(pjsGanadores[0])
+       if(pjsGanadores.length == 1 && fase == 2){
+        const winner = require(`../../${pjsGanadores[0]}`)
+        setGanador(winner)
+        console.log('ganador: '+winner)
        }
     }
 

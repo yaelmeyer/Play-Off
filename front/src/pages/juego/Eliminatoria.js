@@ -42,7 +42,7 @@ const Eliminatoria = (props) =>{
                     setGanador={setGanador}>
             </Duelo>
             ) :
-            <div>
+            <div className='imagenes'>
                 <h2>Ganador:</h2>
                 <img src={ganador} />
             </div>
