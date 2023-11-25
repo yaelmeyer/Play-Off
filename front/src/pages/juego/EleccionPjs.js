@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom"
 
 const EleccionPjs = (props) =>{
     const setEmpezar = props.setEmpezar
+    const setPjs = props.setPjs
+    const pjs = props.pjs
 
     const [imagen, setImagen] = useState([])
     const [imagenes, setImagenes] = useState([])
@@ -39,6 +41,12 @@ const EleccionPjs = (props) =>{
         setImagenes(newImgs);
     }
 
+    const guardarImg = (imagen, index) =>{       
+        pjs.push(imagen)
+        console.log(pjs)
+        setPjs(pjs)
+    }
+
     return(
         <div className="formulario">
             <ul>
@@ -65,7 +73,8 @@ const EleccionPjs = (props) =>{
             </div> */}
                 {imagenes.map((imagen, index)=>(             
                         <div className="imagenes" key={index}>    
-                            <button onClick={()=>eliminarImg(index)}>X</button>                    
+                            {/* <button onClick={()=>eliminarImg(index)}>X</button>    */}
+                            <button onClick={()=>guardarImg(imagen,index)}>agregar</button>                     
                             <img src={imagen} alt="img"/>
                         </div>
                 ))}

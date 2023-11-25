@@ -14,6 +14,9 @@ const IniciarJuego = (props) => {
     //variables 
     const [cantPjs, setCantPjs] = useState(0)
 
+    //pjs 
+    const [pjs, setPjs] = useState([])
+
     return(
         <>
             {formulario?(
@@ -27,10 +30,13 @@ const IniciarJuego = (props) => {
 
             {cargarPjs?(
                 <div>
-                    <EleccionPjs setEmpezar={setEmpezar}/>
+                    <EleccionPjs    setEmpezar={setEmpezar}
+                                    setPjs= {setPjs}
+                                    pjs={pjs}/>
                 </div>
             ) : <div></div>}
-            
+            <br/>
+
         </>
     );
 }
