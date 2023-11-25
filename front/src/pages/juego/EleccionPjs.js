@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 
 const EleccionPjs = (props) =>{
     const setEmpezar = props.setEmpezar
+    const setCargarPjs = props.setCargarPjs
     const setPjs = props.setPjs
     const pjs = props.pjs
 
@@ -12,7 +13,8 @@ const EleccionPjs = (props) =>{
     
 
     const empezarJuego = () =>{
-
+        setEmpezar(true)
+        setCargarPjs(false)
     }
 
     const cargarImg = (event) =>{
@@ -65,7 +67,7 @@ const EleccionPjs = (props) =>{
                     <input id="img" type="file" accept="image/*" onChange={cargarImg}/>
                 </li>
                 <li>
-                    <button type="submit">guardar pj</button>
+                    <button onClick={empezarJuego}>empezar eliminatoria</button>
                 </li>
             </ul>
             {/* <div className="imagenes">

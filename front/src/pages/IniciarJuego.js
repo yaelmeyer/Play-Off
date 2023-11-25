@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FormularioJuego from '../components/FormularioJuego';
 import EleccionPjs from './juego/EleccionPjs';
+import Eliminatoria from '../pages/juego/Eliminatoria'
 
 const url = 'cargar-pjs'
 
@@ -32,10 +33,14 @@ const IniciarJuego = (props) => {
                 <div>
                     <EleccionPjs    setEmpezar={setEmpezar}
                                     setPjs= {setPjs}
-                                    pjs={pjs}/>
+                                    pjs={pjs}
+                                    setCargarPjs={setCargarPjs}/>
                 </div>
             ) : <div></div>}
-            <br/>
+
+            {empezar?(
+                <Eliminatoria  pjs={pjs} />
+            ): <div/>}
 
         </>
     );

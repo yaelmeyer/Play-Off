@@ -22,8 +22,10 @@ const Duelo = (props) =>{
 //_____________________________________________________________
 
 //variables___________________________________________________
-    let pj1 = require(`../../${props.pjs[0]}`) 
-    let pj2 = require(`../../${props.pjs[1]}`) 
+    // let pj1 = require(`../../${props.pjs[0]}`) 
+    // let pj2 = require(`../../${props.pjs[1]}`) 
+    let pj1 = props.pjs[0]
+    let pj2 = props.pjs[1]
     const vs = require('../../img/vs.png') 
 //______________________________________________________________
 
@@ -53,7 +55,8 @@ const Duelo = (props) =>{
        } 
 
        if(pjsGanadores.length == 1 && fase == 2){
-        const winner = require(`../../${pjsGanadores[0]}`)
+        // const winner = require(`../../${pjsGanadores[0]}`)
+        const winner = pjsGanadores[0]
         setGanador(winner)
         console.log('ganador: '+winner)
        }

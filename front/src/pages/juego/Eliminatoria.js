@@ -2,17 +2,12 @@ import { useState } from 'react'
 import Duelo from './Duelo'
 
 const Eliminatoria = (props) =>{
-    const cantPjs = 4
-    const url1 = 'img/carrucel/pj1.png'
-    const url2 = 'img/carrucel/pj2.png'
-    const url3 = 'img/carrucel/pj3.png'
-    const url4 = 'img/carrucel/pj4.png'
-    const url5 = 'img/carrucel/pj5.png'
-    const url6 = 'img/carrucel/pj6.png'
-    const url7 = 'img/carrucel/pj7.png'
-    const url8 = 'img/carrucel/pj8.png'
+    //props
+    const personajes = props.pjs
 
-    const [urlsActual, setUrlsActual] = useState([url1, url2, url3, url4, url5, url6, url7, url8])
+    const cantPjs = 4
+
+    const [urlsActual, setUrlsActual] = useState(personajes)
 
     const [urlsSiguiente, setUrlsSiguiente] = useState([])
 
@@ -47,8 +42,6 @@ const Eliminatoria = (props) =>{
                 <img src={ganador} />
             </div>
             }
-            
-            
         </>
     )
 }
