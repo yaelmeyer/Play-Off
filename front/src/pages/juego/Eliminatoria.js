@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Duelo from './Duelo'
+import { Navigate } from 'react-router-dom'
 
 const Eliminatoria = (props) =>{
     //props
@@ -22,6 +23,13 @@ const Eliminatoria = (props) =>{
 
     const [ganador, setGanador] = useState(null)
 
+    const [inicio, setInicio] = useState(false)
+    
+    const regresarInicio = () =>{
+        console.log('regresarInicio')
+        setInicio(true)
+    }
+
     return(
         <>
             {!ganador?(
@@ -40,6 +48,8 @@ const Eliminatoria = (props) =>{
             <div className='imagenes'>
                 <h2>Ganador:</h2>
                 <img src={ganador} />
+                <button onClick={regresarInicio}>volver al inicio</button>
+                {inicio && <Navigate to={'/'}/>}
             </div>
             }
         </>
