@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {  useState } from "react";
 import '../styles/components/formularioJuego.css';
 
+
 const FormularioJuego = (props) =>{
+    const setFormulario = props.setFormulario
+    const setCantPjs = props.setCantPjs
+    const setCargarPjs = props.setCargarPjs
+
+    const completarForm = () =>{
+        console.log('empezarJuego')
+        setFormulario(false)
+        setCargarPjs(true)
+    }
+
+    const elejirCantPjs = (event) =>{
+        setCantPjs(parseInt(event.target.value))
+    }
+
     return(
-        <form action="" className="formulario">
+        <form onSubmit={completarForm} className="formulario">
             <ul>
                  <li>
                     <label htmlFor="administrador">aqui va el nombre del administrador</label>
@@ -15,15 +30,15 @@ const FormularioJuego = (props) =>{
                 <li>
                     <label>Cantidad Personajes</label>
                     <div className="radio-personajes">
-                        <input type="radio" id="2" name="cant-personajes" value="2"/>
+                        <input type="radio" id="2" name="cant-personajes" value="2" onChange={elejirCantPjs}/>
                         <label htmlFor="2">2</label>
-                        <input type="radio" id="4" name="cant-personajes" value="4"/>
+                        <input type="radio" id="4" name="cant-personajes" value="4" onChange={elejirCantPjs}/>
                         <label htmlFor="4">4</label>
-                        <input type="radio" id="4" name="cant-personajes" value="4"/>
+                        <input type="radio" id="4" name="cant-personajes" value="8" onChange={elejirCantPjs}/>
                         <label htmlFor="4">8</label>
-                        <input type="radio" id="4" name="cant-personajes" value="4"/>
+                        <input type="radio" id="4" name="cant-personajes" value="16" onChange={elejirCantPjs}/>
                         <label htmlFor="4">16</label>
-                        <input type="radio" id="4" name="cant-personajes" value="4"/>
+                        <input type="radio" id="4" name="cant-personajes" value="32" onChange={elejirCantPjs}/>
                         <label htmlFor="4">32</label>
                     </div>
                     
@@ -34,7 +49,7 @@ const FormularioJuego = (props) =>{
                 </li>
                 <button type="submit">crear partida</button>
             </ul>
-        </form>
+         </form>
     );
 }
 
