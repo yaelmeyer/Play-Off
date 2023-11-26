@@ -9,6 +9,8 @@ import Nav from './shared/Nav';
 import Footer from './shared/Footer';
 import EleccionPjs from './pages/juego/EleccionPjs'
 import UnirseAPartida from './pages/UnirseAPartida';
+import Eliminatoria from './pages/juego/Eliminatoria'
+
 function App() {
   return (
     <>
@@ -22,6 +24,7 @@ function App() {
           <Route path='unirse-partida' element={<UnirseAPartida/>}/>
           <Route path='ultimos-pjs' element={<UltimosPjsAgregados/>}/>
           <Route path='cargar-pjs' element={<EleccionPjs/>}/>
+          <Route path="eliminatoria" element={<Eliminatoria/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>
