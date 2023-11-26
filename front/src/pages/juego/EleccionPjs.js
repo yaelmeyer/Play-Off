@@ -3,27 +3,40 @@ import { useParams } from "react-router-dom"
 
 
 const EleccionPjs = (props) =>{
+    //props
     const setEmpezar = props.setEmpezar
     const setCargarPjs = props.setCargarPjs
     const setPjs = props.setPjs
     const pjs = props.pjs
+    const cantPjs = props.cantPjs
 
+    //variables
     const [imagen, setImagen] = useState([])
     const [imagenes, setImagenes] = useState([])
+    const [cantPjsElejidos, setCantPjsElejidos] = useState(0)
+
+    const [pjsFaltantes, setPjsFaltantes] = useState(cantPjs)
     
 
     const empezarJuego = () =>{
-        setEmpezar(true)
-        setCargarPjs(false)
+        console.log(cantPjsElejidos)
+        if(cantPjsElejidos == cantPjs){
+            setEmpezar(true)
+            setCargarPjs(false)
+        }
+
     }
 
     const cargarImg = (event) =>{
-        const file = event.currentTarget.files[0]
-        const url = URL.createObjectURL(file)
-        setImagen(url)
-        imagenes.push(url)
-        setImagenes(imagenes)
-        console.log(imagenes)
+        if(event && event.currentTarget && event.currentTarget.files && event.currentTarget.files[0]){
+            const file = event.currentTarget.files[0]
+            const url = URL.createObjectURL(file)
+            setImagen(url)
+            imagenes.push(url)
+            setImagenes(imagenes)
+            console.log(imagenes)
+        }
+        
     }
 
     const eliminarImg = (index) =>{
@@ -47,13 +60,14 @@ const EleccionPjs = (props) =>{
         pjs.push(imagen)
         console.log(pjs)
         setPjs(pjs)
+        setCantPjsElejidos(cantPjsElejidos+1)
     }
 
     return(
         <div className="formulario">
             <ul>
                 <li>
-                    <h3> pjs a elejir</h3>
+                    <h3>{cantPjs} pjs a elejir</h3>
                 </li>
                 <li>
                     <label htmlFor="nombre">nombre</label>

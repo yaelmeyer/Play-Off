@@ -34,7 +34,8 @@ const IniciarJuego = (props) => {
                     <EleccionPjs    setEmpezar={setEmpezar}
                                     setPjs= {setPjs}
                                     pjs={pjs}
-                                    setCargarPjs={setCargarPjs}/>
+                                    setCargarPjs={setCargarPjs}
+                                    cantPjs={cantPjs}/>
                 </div>
             ) : <div></div>}
 
