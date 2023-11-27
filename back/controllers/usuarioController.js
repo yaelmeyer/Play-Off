@@ -16,7 +16,11 @@ const usuarioPost = async(req = request, res = response) =>{
     // })
     
     if(result.length > 0){
-        res.render('admin/index')
+        req.session.id_usuario = result[0].id
+        req.session.nombre = result[0].nombre
+        res.render('admin/index',{
+            nombre: req.session.nombre
+        })
     }
     else
     res.render('admin/login')
@@ -27,7 +31,14 @@ const inicio = (req = request, res=response) =>{
     res.render('admin/login')
 }
 
+const logout = (req = request, res = response) =>{
+    req.session.destroy()
+
+    res.render('admin/login')
+}
+
 module.exports = {
     usuarioPost,
-    inicio
+    inicio,
+    logout
 }

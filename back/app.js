@@ -6,8 +6,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/indexRoute');
 var usersRouter = require('./routes/users');
+const novedadRoute = require('./routes/novedadRoute')
 
 var app = express();
+
+var session = require('express-session')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,8 +22,31 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'Pasfdasfdas',
+  cookie: {maxAge: null},
+  resave: false,
+  saveUninitialized: true
+}))
+
+secured = async (req, res, next) =>{
+  try{
+    console.log(req.session.id_usuario)
+    if(req.session.id_usuario){
+      next()
+    } else{
+      res.redirect('/')
+    }
+  } catch(error){
+    console.log(error)
+  }
+}
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/novedades', secured, novedadRoute)
+app.use('/logout', indexRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
