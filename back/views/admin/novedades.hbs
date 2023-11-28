@@ -1,0 +1,22 @@
+<h2>administrador de novedadess</h2>
+
+{{#each novedades as |novedad|}}
+    <span>{{novedad.titulo}}: </span>
+    <span>{{novedad.descripcion}}</span>
+    <a href="/novedades/eliminar/{{novedad.id}}">borrar</a>
+    <a href="/novedades/form-actualizar/{{novedad.id}}">modificar</a>
+    <button onclick="saludo()"></button>
+    <br>
+{{/each}} 
+
+<form action="/novedades/guardar" method="post">
+    <input type="text" name="titulo"/>
+    <input type="text" name="descripcion"/>
+    <button type="submit">guardar</button>
+</form>
+
+<script>
+    saludo = () =>{
+        console.log('holsS')
+    }
+</script>
