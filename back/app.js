@@ -11,6 +11,7 @@ const novedadRoute = require('./routes/novedadRoute')
 var app = express();
 
 var session = require('express-session')
+require('dotenv').config();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
