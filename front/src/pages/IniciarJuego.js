@@ -24,6 +24,7 @@ const IniciarJuego = (props) => {
                 <div>
                     <h2>Elija las opciones de juego:</h2>
                     <FormularioJuego    setFormulario={setFormulario} 
+                                        cantPjs={cantPjs}
                                         setCantPjs={setCantPjs}
                                         setCargarPjs={setCargarPjs}/>
                 </div>                

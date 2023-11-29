@@ -1,6 +1,8 @@
 nav {
     background-color: darkgrey;
-    height: 25px;
+    height: 75px;
+    /* width: 15%; */
+    
 }
 
 nav ul {
@@ -8,13 +10,28 @@ nav ul {
     list-style: none;
     display: flex;
     align-items: center;
+    display: flex;
+    align-items:initial;
 }
 
 nav ul li {
-    width: 10%;
-    height: 20px;
+    width: 100%;
+    height: 75px;
     text-align: center;
     box-shadow: 2px 2px 2px 0px;
+    font-size: x-large;
+}
+
+.navLink{
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    box-shadow: 2px 2px 2px 0px;
+    font-size: x-large;
+}
+
+a{
+    text-decoration: none;
 }
 
 .activo {
