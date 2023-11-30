@@ -1,4 +1,5 @@
 const {request, response} = require('express')
+let pool = require('../db/conectorDB')
 
 const partidaPost = async(req = request, res = response) =>{
 
@@ -24,7 +25,19 @@ const partidaGet = async(req = request, res = resonse) =>{
     })
 }
 
+const pruebaGet = async(req = request, res = response) =>{
+    console.log('pool ' + pool)
+
+    const result = await pool.query("select * from persona")
+    console.log(result)
+    res.json({
+        msg: 'se traen datos de la DB',
+        result
+    })
+}
+
 module.exports = {
     partidaPost,
-    partidaGet
+    partidaGet,
+    pruebaGet
 }
