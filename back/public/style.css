@@ -79,7 +79,7 @@ main p{
 }
 
 .imagenes{
-    background-color:dimgrey;
+    background-color:aqua;
     display: flex;
     align-items: center;
     height: 190px;
