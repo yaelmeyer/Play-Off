@@ -1,65 +1,40 @@
 const {request, response} = require('express')
-let pool = require('../db/conectorDB')
-
-const novedadGet = async(req = request, res = response) =>{
-
-    const query = 'select * from novedad'
-
-    const result = await pool.query(query)
-
-    res.json({
-        msg: 'se obtubieron las novedades',
-        novedades: result
-    })
-}
-
-const novedadGetById = async(id) =>{
-    const query = 'select * from novedad where id = ?'
-
-    const novedad = await pool.query(query, [id])
-
-    return novedad[0]
-}
+const { getNovedadByIdDB, getNovedadesDB, postNovedadDB, deleteNovedadDB, updateNovedadDB } = require('../models/novedadModel')
 
 const novedadPost = async(req = request, res = response) =>{
     const {titulo, descripcion} = req.body
-    const query = `insert into novedad (titulo, descripcion) values (?, ?) `
-    console.log("holaa: "+titulo+" "+descripcion)
-    await pool.query(query, [titulo, descripcion])
+    await postNovedadDB(titulo, descripcion)
 
     res.redirect('/novedades/admin')
 }
 
 const novedadDelete = async(req=request, res=response) =>{
     const id = req.params.id
-    const query = 'delete from novedad where novedad.id = ?'
-    
-    await pool.query(query, [id])
+
+    await deleteNovedadDB(id)
 
     res.redirect('/novedades/admin')
 }
 
 const novedadUpdate = async(req = request, res = response) =>{
     const {id, titulo, descripcion} = req.body
-    const query = 'update novedad set titulo = ?, descripcion = ? where id = ?'
 
-    await pool.query(query, [titulo, descripcion, id])
+    await updateNovedadDB(id, titulo, descripcion)
+    
     res.redirect('/novedades/admin')
 }
 
 const inicio = async(req = request, res=response) =>{
-    const query = 'select * from novedad'
-    const result = await pool.query(query)
-    console.log(result)
+    const novedades = await getNovedadesDB()
+    console.log(novedades)
     res.render('admin/novedades',{
-        novedades: result,
-        holi: 'sooo'
+        novedades: novedades
     })
 }
 
 const actualizar = async(req = request, res=response) =>{
     const id = req.params.id
-    const novedad = await novedadGetById(id)
+    const novedad = await getNovedadByIdDB(id)
 
     res.render('admin/novedades/modificar',{
         novedad: novedad
@@ -67,7 +42,6 @@ const actualizar = async(req = request, res=response) =>{
 }
 
 module.exports = {
-    novedadGet,
     novedadPost,
     novedadDelete,
     novedadUpdate,

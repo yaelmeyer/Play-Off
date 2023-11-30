@@ -1,11 +1,10 @@
 const {Router} = require('express')
-const {novedadGet, novedadPost, novedadDelete, novedadUpdate, inicio, actualizar} = require('../controllers/novedadController')
+const {novedadPost, novedadDelete, novedadUpdate, inicio, actualizar} = require('../controllers/novedadController')
 
 const router = Router()
 
 router.get('/admin', inicio)
 
-router.get('/', novedadGet)
 
 router.post('/guardar', novedadPost)
 
