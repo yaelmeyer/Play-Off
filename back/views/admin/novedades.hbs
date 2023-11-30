@@ -1,18 +1,33 @@
-<h2>administrador de novedadess</h2>
+<link rel='stylesheet' href='/style.css' />
+<h2>Administrador de novedades</h2>
 
-{{#each novedades as |novedad|}}
-    <span>{{novedad.titulo}}: </span>
-    <span>{{novedad.descripcion}}</span>
-    <a href="/novedades/eliminar/{{novedad.id}}">borrar</a>
-    <a href="/novedades/form-actualizar/{{novedad.id}}">modificar</a>
-    <button onclick="saludo()"></button>
-    <br>
-{{/each}} 
+<div class="explicacion">
+    {{#each novedades as |novedad|}}
+        <div class="novedad">
+            <div class="tituloNovedad">
+                <span>  {{novedad.titulo}} </span>
+            </div>
+            <div class="descripcion">
+                <span>  {{novedad.descripcion}} </span>
+            </div>
+            <div class="borrar">
+                <a href="/novedades/eliminar/{{novedad.id}}" class="url">borrar</a>
+            </div>
+            <div class="modificar">
+                <a href="/novedades/form-actualizar/{{novedad.id}}">modificar</a>
+            </div>
+            
+            
+        </div>
+        <br>
+    {{/each}} 
+</div>
 
-<form action="/novedades/guardar" method="post">
-    <input type="text" name="titulo"/>
-    <input type="text" name="descripcion"/>
-    <button type="submit">guardar</button>
+<h3>agregar nueva novedad</h3>
+<form action="/novedades/guardar" method="post" class="formulario">
+    <span>titulo: </span><input type="text" name="titulo"/>
+    <span>descripcion: </span><input type="text" name="descripcion"/>
+    <button type="submit">agregar</button>
 </form>
 
 <script>
