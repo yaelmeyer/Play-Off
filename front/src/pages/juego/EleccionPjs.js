@@ -28,15 +28,22 @@ const EleccionPjs = (props) =>{
     }
 
     const cargarImg = (event) =>{
-        if(event && event.currentTarget && event.currentTarget.files && event.currentTarget.files[0]){
-            const file = event.currentTarget.files[0]
-            const url = URL.createObjectURL(file)
-            setImagen(url)
-            imagenes.push(url)
-            setImagenes(imagenes)
-            console.log(imagenes)
-        }
-        
+        if(cantPjsElejidos < cantPjs){
+            if(event && event.currentTarget && event.currentTarget.files && event.currentTarget.files[0]){
+                const file = event.currentTarget.files[0]
+                const url = URL.createObjectURL(file)
+                setImagen(url)
+                imagenes.push(url)
+                setImagenes(imagenes)
+                console.log(imagenes)
+
+                guardarImg(url)
+            }
+        }   
+        if(cantPjsElejidos == cantPjs){
+            console.log('se invalida')
+            document.getElementById('img').setAttribute('disabled', true)
+        }   
     }
 
     const eliminarImg = (index) =>{
@@ -56,7 +63,7 @@ const EleccionPjs = (props) =>{
         setImagenes(newImgs);
     }
 
-    const guardarImg = (imagen, index) =>{       
+    const guardarImg = (imagen) =>{       
         pjs.push(imagen)
         console.log(pjs)
         setPjs(pjs)
@@ -70,14 +77,18 @@ const EleccionPjs = (props) =>{
                     <h3>{cantPjs} pjs a elejir</h3>
                 </li>
                 <li>
+                    <h3>{cantPjs - cantPjsElejidos} pjs faltantes</h3>
+                </li>
+                {/* <li>
                     <label htmlFor="nombre">nombre</label>
                     <input type="text" id="nombre"/>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                     <label htmlFor="imagen">cargar imagen</label>
                     <input type="text" id="urlImagen"/>
-                </li>
+                </li> */}
                 <li>
+                    <label htmlFor="img">cargar imagen</label>
                     <input id="img" type="file" accept="image/*" onChange={cargarImg}/>
                 </li>
                 <li>
@@ -90,7 +101,7 @@ const EleccionPjs = (props) =>{
                 {imagenes.map((imagen, index)=>(             
                         <div className="imagenes" key={index}>    
                             {/* <button onClick={()=>eliminarImg(index)}>X</button>    */}
-                            <button onClick={()=>guardarImg(imagen,index)}>agregar</button>                     
+                            {/* <button onClick={()=>guardarImg(imagen,index)}>agregar</button>                      */}
                             <img src={imagen} alt="img"/>
                         </div>
                 ))}

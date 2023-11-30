@@ -4,17 +4,17 @@ import pj2 from '../img/carrucel/pj2.png';
 import CajaTexto from '../components/CajaTexto';
 
 const parrafos1=[
-    'Para comenzar a jugar primero se debe elejir la cantidad de participantes',
-    'Luego hay que elejir la cantidad de personajes que se van a elejir',
+    // 'Para comenzar a jugar primero se debe elejir la cantidad de participantes',
+    'Hay que elejir la cantidad de personajes que se van a elejir',
     'Esta cantidad puede ser: 2, 4, 8, 16 o 32  personajes',
-    'La cantidad de personajes se va a dividir entre la cantidad de participantes',
-    'cada participante comienza a cargar a la app los pjs que quieran'      
+    // 'La cantidad de personajes se va a dividir entre la cantidad de participantes',
+    'comienza a cargar a la app los pjs que quieran'      
 ];
 const parrafos2=[
-    'los personaejes cargados se elijiran de a par aleatoriamente, y cada particitante debe votar el que mas le guste'
+    'los personaejes cargados se elijiran de a par aleatoriamente, y se debera elejir el que mas le guste'
 ];
 const parrafos3=[
-    'El pj mas votado avanza a la siguiente ronda',
+    'El pj votado avanza a la siguiente ronda',
     'Los pjs iran pasando de ronda hasta quedar solo 1!!!'
 ];
 
