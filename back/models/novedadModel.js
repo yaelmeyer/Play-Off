@@ -29,10 +29,10 @@ const deleteNovedadDB = async(id) =>{
     await pool.query(query, [id])
 }
 
-const updateNovedadDB = async(id, titulo, descripcion) =>{
-    const query = 'update novedad set titulo = ?, descripcion = ? where id = ?'
+const updateNovedadDB = async(id, titulo, descripcion, img) =>{
+    const query = 'update novedad set titulo = ?, descripcion = ?, img = ? where id = ?'
 
-    await pool.query(query, [titulo, descripcion, id])
+    await pool.query(query, [titulo, descripcion, img, id])
 }
 
 module.exports = {

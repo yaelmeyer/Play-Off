@@ -1,8 +1,14 @@
 <link rel='stylesheet' href='/style.css' />
 
-<form action="/novedades/actualizar" method="post" class="formulario">
+<form action="/novedades/actualizar" enctype="multipart/form-data" method="post" class="formulario">
     <span>titulo: </span><input type="text" name="titulo" value="{{novedad.titulo}}"/>
     <span>descripcion: </span><input type="text" name="descripcion" value="{{novedad.descripcion}}"/>
+    <input type="file" name="imagen" id="imagen"></input>
+    {{!-- <div class="imagenes">
+        {{{novedad.img}}}
+    </div> --}}
+    <span>eliminar imagen? : </span><input type="checkbox" name="img_delete" value="1">
+    <input type="hidden" name="img_original" value="{{novedad.img}}">
     <input type="text" name="id" value="{{novedad.id}}" style="display: none;"/>
     <button type="submit">actualizar</button>
 </form>
