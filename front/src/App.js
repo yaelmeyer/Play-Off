@@ -10,6 +10,7 @@ import Footer from './shared/Footer';
 import EleccionPjs from './pages/juego/EleccionPjs'
 import UnirseAPartida from './pages/UnirseAPartida';
 import Eliminatoria from './pages/juego/Eliminatoria'
+import Novedades from './pages/Novedades';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Route path='como-jugar' element={<ComoJugar/>}/>
           <Route path='iniciar-juego' element={<IniciarJuego/>}/>
           <Route path='unirse-partida' element={<UnirseAPartida/>}/>
-          <Route path='ultimos-pjs' element={<UltimosPjsAgregados/>}/>
+          <Route path='novedades' element={<Novedades/>}/>
           <Route path='cargar-pjs' element={<EleccionPjs/>}/>
           <Route path="eliminatoria" element={<Eliminatoria/>}/>
         </Routes>

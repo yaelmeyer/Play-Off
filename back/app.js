@@ -7,10 +7,12 @@ var logger = require('morgan');
 var indexRouter = require('./routes/indexRoute');
 var usersRouter = require('./routes/users');
 const novedadRoute = require('./routes/novedadRoute')
+const apiRoute = require('./routes/apiRoute')
 
 var app = express();
 
 var fileUpload = require('express-fileupload')
+var cors = require('cors')
 
 var session = require('express-session')
 require('dotenv').config();
@@ -54,6 +56,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/novedades', secured, novedadRoute)
 app.use('/logout', indexRouter)
+app.use('/api', cors(), apiRoute)
 
 
 // catch 404 and forward to error handler

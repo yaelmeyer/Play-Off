@@ -10,7 +10,7 @@ const Nav = (props) =>{
                 <li><NavLink to="/como-jugar" className={({isActive}) => isActive? 'activo' : undefined}>Como Jugar</NavLink></li>
                 <li><NavLink to="/iniciar-juego" className={({isActive}) => isActive? 'activo' : undefined}>Iniciar Juego</NavLink></li>
                 <li><NavLink to='/unirse-partida' className={({isActive}) => isActive? 'activo' : undefined}>Entrar a partida</NavLink></li>
-                <li><NavLink to="/ultimos-pjs" className={({isActive}) => isActive? 'activo' : undefined}>Ultimos Personajes</NavLink></li>
+                <li><NavLink to="/novedades" className={({isActive}) => isActive? 'activo' : undefined}>novedades</NavLink></li>
             </ul>
         </nav>
         
