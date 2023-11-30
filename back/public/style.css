@@ -84,7 +84,7 @@ main p{
     align-items: center;
     height: 190px;
     justify-content: center;
-
+    width: 180px;
 }
 
 .imagenes img{

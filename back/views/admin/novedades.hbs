@@ -10,6 +10,9 @@
             <div class="descripcion">
                 <span>  {{novedad.descripcion}} </span>
             </div>
+            <div class="imagenes">
+                 {{{novedad.imagen}}}
+            </div>
             <div class="borrar">
                 <a href="/novedades/eliminar/{{novedad.id}}" class="url">borrar</a>
             </div>
@@ -24,14 +27,9 @@
 </div>
 
 <h3>agregar nueva novedad</h3>
-<form action="/novedades/guardar" method="post" class="formulario">
+<form action="/novedades/guardar" enctype="multipart/form-data" method="post" class="formulario">
     <span>titulo: </span><input type="text" name="titulo"/>
     <span>descripcion: </span><input type="text" name="descripcion"/>
+    <input type="file" name="imagen" id="imagen"></input>
     <button type="submit">agregar</button>
 </form>
-
-<script>
-    saludo = () =>{
-        console.log('holsS')
-    }
-</script>

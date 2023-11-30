@@ -10,6 +10,8 @@ const novedadRoute = require('./routes/novedadRoute')
 
 var app = express();
 
+var fileUpload = require('express-fileupload')
+
 var session = require('express-session')
 require('dotenv').config();
 
@@ -42,6 +44,11 @@ secured = async (req, res, next) =>{
     console.log(error)
   }
 }
+
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -17,10 +17,10 @@ const getNovedadesDB = async() =>{
     return  novedades
 }
 
-const postNovedadDB = async(titulo, descripcion) =>{
-    const query = `insert into novedad (titulo, descripcion) values (?, ?) `
-    console.log("holaa: "+titulo+" "+descripcion)
-    await pool.query(query, [titulo, descripcion])
+const postNovedadDB = async(titulo, descripcion, img_id) =>{
+    const query = `insert into novedad (titulo, descripcion, img) values (?, ?, ?) `
+    console.log("a guardar: "+titulo+" "+descripcion+" "+ img_id)
+    await pool.query(query, [titulo, descripcion, img_id])
 }
 
 const deleteNovedadDB = async(id) =>{
