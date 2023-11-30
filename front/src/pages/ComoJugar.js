@@ -11,7 +11,7 @@ const parrafos1=[
     'comienza a cargar a la app los pjs que quieran'      
 ];
 const parrafos2=[
-    'los personaejes cargados se elijiran de a par aleatoriamente, y se debera elejir el que mas le guste'
+    'los personaejes cargados se elijiran de a par, y se debera elejir el que mas le guste'
 ];
 const parrafos3=[
     'El pj votado avanza a la siguiente ronda',
