@@ -4,13 +4,17 @@ import '../styles/components/formularioJuego.css';
 
 const FormularioJuego = (props) =>{
     const setFormulario = props.setFormulario
+    const cantPjs = props.cantPjs
     const setCantPjs = props.setCantPjs
     const setCargarPjs = props.setCargarPjs
 
     const completarForm = () =>{
-        console.log('empezarJuego')
-        setFormulario(false)
-        setCargarPjs(true)
+        if(cantPjs > 0){
+            console.log('empezarJuego')
+            setFormulario(false)
+            setCargarPjs(true)
+        }
+        console.log('falta elejir la cant de pjs')
     }
 
     const elejirCantPjs = (event) =>{
@@ -20,13 +24,10 @@ const FormularioJuego = (props) =>{
     return(
         <form onSubmit={completarForm} className="formulario">
             <ul>
-                 <li>
-                    <label htmlFor="administrador">aqui va el nombre del administrador</label>
-                </li> 
-                <li>
+                {/* <li>
                     <label htmlFor="cant-jugadores">Cantidad Jugadores</label>
                     <input type="number" id="cant-jugadores"/>
-                </li>
+                </li> */}
                 <li>
                     <label>Cantidad Personajes</label>
                     <div className="radio-personajes">
@@ -43,10 +44,10 @@ const FormularioJuego = (props) =>{
                     </div>
                     
                 </li>
-                <li>
+                {/* <li>
                     <label htmlFor="nombre">Nombre Partida</label>
                     <input type="text" id="nombre"/>
-                </li>
+                </li> */}
                 <button type="submit">crear partida</button>
             </ul>
          </form>

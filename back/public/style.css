@@ -65,6 +65,9 @@ nav ul li {
     min-height: 150px;
     width: 100%;
     text-align: center;
+    display: flex;
+    align-items: start;
+    flex-direction: column-reverse
 }
 
 .explicacion p:hover{
@@ -76,12 +79,12 @@ main p{
 }
 
 .imagenes{
-    background-color:dimgrey;
+    background-color:aqua;
     display: flex;
     align-items: center;
     height: 190px;
     justify-content: center;
-
+    width: 180px;
 }
 
 .imagenes img{
@@ -137,4 +140,30 @@ a{
 .radio-personajes label{
     min-width: none;
     max-width: 10px;
+}
+
+.novedad{
+    display: flex;
+    border: 1px solid aliceblue;
+    background-color: rgb(236, 209, 209);
+}
+.tituloNovedad{
+    min-width: 200px;
+}
+
+.novedad .descripcion{
+    min-width: 800px;
+}
+
+.n75{
+    min-width: 1000px;
+    background-color: cadetblue;
+}
+.borrar{
+    background-color:crimson;
+    padding-right: 10px;
+}
+
+.modificar{
+    background-color: chartreuse;
 }
